@@ -1,0 +1,8 @@
+Webpack
+    Babel   (траспилер к версиям для старых версий браузера)
+    Scss    (css-препроцессор)
+    ESLint  (чистота оформления кода)
+    2 Modes
+        - Dev (Dev Server, SourceMaps, ESLint, Not Minified JS & CSS)
+        - Prod (Minified Code)
+Git
