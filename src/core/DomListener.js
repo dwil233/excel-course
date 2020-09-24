@@ -15,8 +15,8 @@ export class DomListener {
       if (!this[method]) {
         throw new Error(`Class ${this.constructor.name} has no method '${method}'`)
       }
-      this.[method] = this[method].bind(this)
-      this.$root.on(listener, this.[method])
+      this[method] = this[method].bind(this)
+      this.$root.on(listener, this[method])
     })
   }
 
