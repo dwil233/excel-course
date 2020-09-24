@@ -9,7 +9,10 @@
     "semi": "off",
     "linebreak-style": "off",
     "arrow-parens": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "max-len": "off",
+    "operator-linebreak": "off",
+    "no-debugger": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
