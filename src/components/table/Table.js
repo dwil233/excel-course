@@ -5,13 +5,6 @@ import {shouldResize} from '@/components/table/table.functions';
 
 export class Table extends ExcelComponent {
   static className = 'excel__table'
-  static state = {
-    initX: 0,
-    initY: 0,
-    initH: 0,
-    initW: 0,
-    target: null,
-  }
 
   constructor($root) {
     super($root, {
