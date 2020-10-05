@@ -24,7 +24,11 @@ function createCol(content) {
 }
 
 function createCell(content, index) {
-  return `<div class="cell" contenteditable="true" data-col="${toChar(null, index)}" data-row="${content}"></div>`
+  const col = toChar(null, index)
+  return `<div class="cell" contenteditable="true" 
+            data-col="${col}" 
+            data-id="${index+1}:${content}">
+          </div>`
 }
 
 function toChar(_, index) {
@@ -39,12 +43,12 @@ export function createTable(rowsCount = 15) {
       .map(createCol)
       .join('')
   rows.push(createRow('', cols))
-  for (let i=1; i<=rowsCount; i++) {
-    const cells = new Array(colsCount).fill(i)
+  for (let row=1; row<=rowsCount; row++) {
+    const cells = new Array(colsCount).fill(row)
         .map(createCell)
         .join('')
 
-    rows.push(createRow(i, cells))
+    rows.push(createRow(row, cells))
   }
   return rows.join('')
 }
