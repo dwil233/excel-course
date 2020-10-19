@@ -36,6 +36,10 @@ export class TableSelection {
     window.selected = this.selected
   }
 
+  get selectedIds() {
+    return this.selected.map($el => $el.id())
+  }
+
   clearAll() {
     this.selected.forEach($el => $el.removeClass(TableSelection.className))
     this.selected = []
