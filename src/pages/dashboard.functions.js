@@ -1,0 +1,33 @@
+import {storage} from '@core/utils';
+
+function toHTML(key) {
+  const id = +key.split(':')[1]
+  const docDate = new Date(storage(key).updateDate)
+  // const docDate = new Date(id)
+  const docTitle = storage(key).title
+  return `<li class="dashboard__record">
+            <a href="#excel/${id}">${docTitle}</a>
+            <strong>${docDate.toLocaleDateString()} ${docDate.toLocaleTimeString()}</strong>
+          </li>`
+}
+
+function getAllKeys() {
+  const keys = []
+  for (let i=0; i < localStorage.length; i++) {
+    const key = localStorage.key(i)
+    if (!key.includes('excel')) {
+      continue
+    }
+    keys.push(key)
+  }
+  return keys
+}
+
+export function getExcelFilesList() {
+  const keys = getAllKeys()
+  if (!keys.length) {
+    return `<p style="text-align:center">Вы пока не создали ни одной таблицы</p>`
+  } else {
+    return keys.map(toHTML).join('')
+  }
+}

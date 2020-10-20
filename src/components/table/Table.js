@@ -34,7 +34,7 @@ export class Table extends ExcelComponent {
       this.updateTextInStore(value)
     })
 
-    this.$on('formula:done', (event) => {
+    this.$on('entering:done', (event) => {
       event.preventDefault()
       this.selection.current.focus()
     })
