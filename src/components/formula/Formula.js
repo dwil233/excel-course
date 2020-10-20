@@ -1,5 +1,6 @@
 import {ExcelComponent} from '@core/ExcelComponent';
 import {$} from '@core/Dom';
+import {enteringDone} from '@/components/helpers';
 
 export class Formula extends ExcelComponent {
   static className = 'excel__formula'
@@ -36,9 +37,10 @@ export class Formula extends ExcelComponent {
   }
 
   onKeydown(event) {
-    const keys = ['Enter', 'Tab']
-    if (keys.includes(event.key)) {
-      this.$fire('formula:done', event)
-    }
+    // const keys = ['Enter', 'Tab']
+    // if (keys.includes(event.key)) {
+    //   this.$fire('entering:done', event)
+    // }
+    enteringDone.call(this, event)
   }
 }
