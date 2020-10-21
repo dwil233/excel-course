@@ -1,6 +1,5 @@
 import {$} from '@core/Dom';
 import {ActiveRoute} from '@core/routes/ActiveRoute';
-// import {ActiveRoute} from '@core/routes/ActiveRoute';
 
 export class Router {
   constructor(selector, routes) {
